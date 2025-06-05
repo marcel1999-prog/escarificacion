@@ -1,0 +1,175 @@
+---
+title: "GERMINACIÓN DE SEMILLAS DE LUPINO (*Lupino mutabilis*) EXPUESTAS A DOS MÉTODOS DE ESCARIFICACIÓN FÍSICA"
+author: "Erik Vilchez, Lleyner Roman, Elda Perez, Deyli Fernandez, Griselida Rojas, Erick Vasquez"
+format:
+  html:
+   toc: true
+   toc-location: left
+   embed-resources: true
+   number-sections: true
+   output-file: index
+   theme: darkly
+   css: estilo.css
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+source("https://inkaverse.com/setup.r")
+library(tidyverse)
+library(GerminaR)
+library(dplyr)
+library(cowplot)
+```
+
+# Importar datos
+
+```{r}
+gs <- ("https://docs.google.com/spreadsheets/d/1JWXoZwJPJpqw_5JuZGPwDqrpXm0yayYcvMksAnYObq8/edit?usp=sharing") %>% 
+  as_sheets_id(url)
+
+fb <- gs %>% 
+  range_read("germinacion") %>% 
+  mutate(across(1:Tratamiento, ~as.factor(.))) %>%
+  dplyr::select(!d4) %>% 
+  as.data.frame()
+
+str(fb)
+```
+
+# Indice de germinación
+```{r}
+gsm <- ger_summary(SeedN = "seeds"
+                   , evalName = "d"
+                   , data = fb
+                   )
+  gsm %>% kable()
+
+```
+
+## Tiempo medio de germinaión
+
+```{r}
+## Mean Germination Time (MGT)
+
+# analysis of variance
+
+av <- aov(mgt ~ Tratamiento, data = gsm)
+anova(av)
+
+# mean comparison test
+
+mc_mgt <- ger_testcomp(aov = av
+                       , comp = c("Tratamiento")
+                       , type = "snk")
+
+# data result
+
+mc_mgt$table %>% 
+   kable(caption = "Mean germination time comparison")
+
+plot <- mc_mgt$table %>% 
+   plot_smr(data = .
+       , type = "bar" 
+       , x = "Tratamiento"
+       , y = "mgt"
+       , ylimits = c(0,3, 0.5)
+       , sig = "sig"
+       , error = "ste"
+       )
+plot
+```
+
+## Germinabilidad
+
+```{r}
+## Germinabilidad
+
+# analysis of variance
+
+av <- aov(grp ~ Tratamiento, data = gsm)
+anova(av)
+
+# mean comparison test
+
+mc_grp <- ger_testcomp(aov = av
+                       , comp = c("Tratamiento")
+                       , type = "snk")
+
+# data result
+
+mc_grp$table %>% 
+  kable(caption = "Mean germination time comparison")
+
+plot <- mc_grp$table %>% 
+   plot_smr(data = .
+       , type = "bar" 
+       , x = "Tratamiento"
+       , y = "grp"
+       # , ylimits = c(0,3, 0.5)
+       , sig = "sig"
+       , error = "ste"
+       )
+plot
+```
+
+## Germinación en el tiempo
+
+```{r}
+# data frame with percentage or relative germination in time by NaCl
+
+git <- ger_intime(Factor = "Tratamiento"
+                  , SeedN = "seeds"
+                  , evalName = "d"
+                  , method = "percentage"
+                  , data = fb
+                  )
+
+# data result
+git %>% 
+   kable(caption = "Cumulative germination by nacl factor")
+plot <- git %>% 
+   fplot(data = .
+        , type = "line"
+        , x = "evaluation"
+        , y = "mean"
+        , group = "Tratamiento"
+        , ylimits = c(0, 110, 10)
+        , ylab = "Germination ('%')"
+        , xlab = "Day"
+        , glab = "Dias"
+        , color = T
+        , error = "ste"
+        )
+plot
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
