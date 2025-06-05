@@ -66,7 +66,7 @@ ggdraw() +
   )
 
 ```
-## Elaboración de las etiquetas
+**Elaboración de las etiquetas**
 
 Para identificar los tratamientos se elaboraron etiquetas en R con sus respectivas leyendas (lijado, bisturí y control), lo que facilitó un seguimiento organizado y preciso del comportamiento de cada grupo de semillas.
 
@@ -87,7 +87,7 @@ ggdraw() +
 
 ```
 
-## Selección de semillas.
+**Selección de semillas.**
 
 Las semillas fueron seleccionadas cuidadosamente, asegurándose de que no presentaran defectos como daños por plagas o un tamaño excesivamente reducido. Posteriormente, se aplicaron dos métodos físicos de escarificación: a 100 semillas se les lijó la testa (abrasión mecánica) y a otras 100 se les realizó un corte en la testa utilizando un bisturí. Además, se seleccionaron cuatro repeticiones de 25 semillas cada una para el tratamiento control.
 
@@ -108,7 +108,7 @@ ggdraw() +
 
 ```
 
-## Preparación de recipientes.
+**Preparación de recipientes.**
 
 El experimento se desarrolló haciendo uso de 12 recipientes de plástico, de tal  manera que estén divididos en tres tratamientos: 4 recipientes para el método físicos de escarificación por lijado, 4 recipientes para corte de la testa con bisturí y 4 recipientes como control. 
 En la base de los recipientes se colocó papel toalla y se humedeció con agua.Luego se procedió a lijar las semillas del tratamiento de escarificación con lija de la cual se tenía 4 repeticiones, De igual manera se procedió a cortar una parte de la semilla con el bisturí que correspondía al tratamiento con bisturí que también tenía 4 repeticiones.
@@ -140,7 +140,7 @@ ggdraw() +
 
 ```
 
-## Organización de semillas.
+**Organización de semillas.**
 
 Se colocaron 25 semillas por recipiente, distribuidas de forma ordenada para facilitar su observación y análisis.
 
@@ -161,9 +161,49 @@ ggdraw() +
 
 ```
 
+**Variables a evaluar.**
+	**Variable independiente: **
+	
+Tipos  de escarificación (lijado de la testa y corte con bisturí)
+
+	**Variable dependiente: **
+	
+- Porcentaje de germinación de semillas
+- Índice de sincronización de la germinación de semillas.
+- Tiempo medio de germinación de semillas
+
+**Diseño del experimento.**
+	**Tratamientos**
+- T1: Escarificación por lijado o abrasión mecánica.
+- T2: Escarificación por corte de la testa con bisturí.
+- T3: Control
+	**Repeticiones**
+		
+		4 repeticiones por tratamiento.
+
+	**Número de semillas por repetición**
+		
+		25 semillas por repetición.
+
+**Diseño estadístico**
+		
+		Diseño de Bloques Completos al Azar (DBCA).
+		
+**Evaluación de las semillas germinadas **
+
+La evaluación fue diaria iniciando del día 0, hasta el día 5, registrando los datos de manera continua la aparición de signos de germinación y cualquier cambio relevante en su desarrollo. Durante este periodo, se controló cuidadosamente el nivel de humedad y se mantuvieron constantes las condiciones ambientales, para así evaluar con cuál de los métodos de escarificación las semillas logran germinar en menor tiempo.
+
+# RESULTADOS
+
+Durante los 5 días de observación, se comprobó que la germinación de las semillas cumplió con las características propias de un proceso exitoso. Las imágenes muestran claramente que las semillas germinaron de manera adecuada, tanto en los tratamientos con escarificación física (lija y bisturí) como en el grupo control, el cual servirá como punto de comparación.
 
 
 ```{r}
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
+
 source("https://inkaverse.com/setup.r")
 library(tidyverse)
 library(GerminaR)
@@ -171,9 +211,14 @@ library(dplyr)
 library(cowplot)
 ```
 
+```{r}
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
+
 # Importar datos
 
-```{r}
 gs <- ("https://docs.google.com/spreadsheets/d/1JWXoZwJPJpqw_5JuZGPwDqrpXm0yayYcvMksAnYObq8/edit?usp=sharing") %>% 
   as_sheets_id(url)
 
@@ -186,8 +231,14 @@ fb <- gs %>%
 str(fb)
 ```
 
-# Indice de germinación
 ```{r}
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
+
+# Indice de germinación
+
 gsm <- ger_summary(SeedN = "seeds"
                    , evalName = "d"
                    , data = fb
@@ -198,8 +249,17 @@ gsm <- ger_summary(SeedN = "seeds"
 
 ## Tiempo medio de germinaión
 
+En la gráfica de barras en el eje Y etiquetado como mgt (tiempo medio de germinación) compara un compara un valor promedio para los tratamientos aplicados a semillas de Lupinus sp.
+En el grupo control pues como se ve no presenta ninguna barra visible, ello es porque el valor no se calculó.
+
+En la barra verde (Bisturí), el tiempo promedio de germinación es cercano a 2.7 días, en cambio en la barra roja que corresponde al tratamiento por lijado el tiempo es ligeramente menor, llegando a 2.4 días aproximadamente. Además, comparten la misma letra “b”, indicando que no existe diferencia estadísticamente entre ellos.
+
+
 ```{r}
-## Mean Germination Time (MGT)
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
 
 # analysis of variance
 
@@ -231,8 +291,20 @@ plot
 
 ## Germinabilidad
 
+En los gráficos se observa una gráfica de barras donde compara el porcentaje de germinación grp (germinación relativa porcentual) en semillas de Lupinus sp. en los tres tratamientos empleados (bisturí, control y lijado), los mismos que están representados por la barra de color verde, amarillo rojo.
+
+La Altura de las barras nos indica el promedio de germinación para cada tratamiento. En el grupo control podemos apreciar que la germinación es ligeramente mayor que los otros, aunque con el lijado es muy similar; en cambio el bisturí pues muestra un promedio menor. 
+
+Las líneas negras que se encuentran sobre cada barra, representan la variabilidad de los datos; en este caso las barras son cortas indicando poca variabilidad demostrando resultados consistentes entre repeticiones.
+
+Las letras que se observa sobre las barras (a), son las mismas es decir comparten la misma letra, lo que significa que no hay diferencias estadísticamente significativas entre tratamiento, pero si las letras fueran diferentes sería lo contrario.
+
+
 ```{r}
-## Germinabilidad
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
 
 # analysis of variance
 
@@ -264,8 +336,16 @@ plot
 
 ## Germinación en el tiempo
 
+Esto es una gráfica de líneas en la cual nos demuestra la evolución de una variable a lo largo del tiempo. En el eje “y” tenemos los porcentajes de germinación y el eje “x” tenemos los días evaluados (desde el día 0 al día 5).
+
+Al culminar los 5 días de evaluación, observamos que los 3 tratamientos lograron alcanzar porcentajes elevados en la germinación de semillas de Lupinus sp. El tratamiento con escarificación por lijado presentó la mayor germinación (línea de color rojo), con un aproximado del 92%, también se destaca por favorecer una germinación más temprana, iniciando desde el primer día. El tratamiento control (línea amarilla), llegó a un 90% de germinación al día 5, pero con un inicio más tardío. En cuanto al tratamiento con escarificación mediante bisturí (línea verde) alcanzó un 88% de germinación, mostrando una velocidad intermedia entre el lijado y el control. Los resultados demuestran que, aunque todos los tratamientos fueron efectivos, el tratamiento mediante escarificación con lija demostró una germinación más rápida, así como ligeramente más eficiente en comparación a los otros.
+
+
 ```{r}
-# data frame with percentage or relative germination in time by NaCl
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
 
 git <- ger_intime(Factor = "Tratamiento"
                   , SeedN = "seeds"
@@ -276,7 +356,7 @@ git <- ger_intime(Factor = "Tratamiento"
 
 # data result
 git %>% 
-   kable(caption = "Cumulative germination by nacl factor")
+   kable(caption = "Cumulative germination by treatment factor")
 plot <- git %>% 
    fplot(data = .
         , type = "line"
@@ -293,6 +373,20 @@ plot <- git %>%
 plot
 ```
 
+# DISCUSIÓN
+
+
+# REFERENCIAS BIBLIOGRÁFICAS
+
+García-Pascual, E., Rodríguez-Trejo, D. A., Guízar-Nolazco, E., & Arteaga-Martínez, B. (2020). CAPACIDAD GERMINATIVA Y SU TASA DE DECLINACIÓN EN SEMILLA DE Lupinus bilineatus Benth. ALMACENADA 15 AÑOS. Agrociencia, 54(1), 115-127.
+
+Garduza-Acosta, B., Lagunes-Espinoza, L. C., Bautista-Muñoz, C. C., García-de-los-Santos, G.,   Zaldívar-Cruz, J. M., & Hernández-Flores, A. (2019). Germination of Crotalaria and Lupinus(Fabaceae) seeds submitted to different pre-germination treatments and their effect on enzymatic   activity during early germination. Brazilian Journal of Biology, 80, 23-29.   https://doi.org/10.1590/1519-6984.185813
+
+Garduza-Acosta, B., Lagunes-Espinoza, L. C., Bautista-Muñoz, C. C., García-de-Los-Santos, G.,   Zaldívar-Cruz, J. M., & Hernández-Flores, A. (2020). Germination of Crotalaria and Lupinus   (Fabaceae) seeds submitted to different pre-germination treatments and their effect on enzymatic   activity during early germination. Brazilian Journal of Biology = Revista Brasleira De Biologia,   80(1), 23-29. https://doi.org/10.1590/1519-6984.185813
+
+Mackay, W. A., Davis, T. D., Sankhla, D., & Riemenschneider, D. E. (1996). Factors Influencing Seed   Germination of Lupinus perennis. Journal of Environmental Horticulture, 14(4), 167-169.   https://doi.org/10.24266/0738-2898-14.4.167
+
+Steinmaus, S. J., Prather, T. S., & Holt, J. S. (2000). Estimation of base temperatures for nine weed   species. Journal of Experimental Botany, 51(343), 275-286. h  ttps://doi.org/10.1093/jexbot/51.343.275
 
 
 
