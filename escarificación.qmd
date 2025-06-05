@@ -13,6 +13,155 @@ format:
 editor_options: 
   chunk_output_type: console
 ---
+# INTRODUCCIÓN
+Las semillas de lupino (Lupinus sp.) presentan dormancia física que impide su germinación, debido a la dureza e impermeabilidad de la testa (Garduza et al., 2020). Para superar esta barrera, se aplican métodos de escarificación física como el lijado y el corte con bisturí, los cuales han demostrado mejorar significativamente la germinación y sincronización en especies como L. perennis y L. exaltatus (Steinmaus et al., 2000; Mackay et al., 1996). Estos tratamientos también se asocian con mayor actividad enzimática en etapas iniciales (Garduza et al., 2019).
+ En un estudio sobre Lupinus bilineatus, la escarificación mecánica mediante lijado con papel de lija resultó en un 48.9 % de germinación, cifra significativamente superior al control sin tratamiento. Este tratamiento no sólo rompió la impermeabilidad de la testa, sino que, al exponer las capas internas del endospermo, facilitó la imbibición y permitió que las enzimas hidrolíticas actúen con mayor rapidez en los primeros días de germinación, mejorando la energía germinativa y la uniformidad en el desarrollo de la plántula (Pascual et al., 2020).
+
+# OBJETIVOS
+
+## Objetivo general
+
+Determinar la germinación de Lupinus sp  mediante  dos técnicas de escarificación física.
+
+## Objetivos específicos
+
+- Analizar el porcentaje de germinación de semillas de lupino sometidas a escarificación por lijado de la testa y por corte con bisturí.
+
+- Determinar el índice de sincronización de la germinación de semillas de lupino mediante ambos métodos de escarificación.
+
+- Comparar el tiempo medio de germinación de semillas de lupino según el tipo de escarificación aplicada.
+
+# MATERIALES Y MÉTODOS
+
+## Materiales:
+- Semillas de chocho (Lupinus sp.)
+- Lijas
+- Bisturíes
+- Papel toalla
+- Taper o recipiente
+- Guantes
+- Ligas
+- Pinzas
+- Agua mineral 
+
+## Metodología
+
+**Obtención de semillas**
+
+Se obtuvo 1 kg de semillas de chocho (Lupinus sp) provenientes de la provincia  de Luya, distrito Lamud.
+
+```{r}
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
+#| fig-cap: "Mi imagen desde Google Drive"
+
+library(cowplot)
+
+ggdraw() +
+  draw_image(
+    "https://drive.google.com/uc?export=view&id=1ku33IQeYFTJAcshubV2_BntZtO7E7_QY",
+    x = 0.2, y = 0.2, width = 0.5, height = 0.5
+  )
+
+```
+## Elaboración de las etiquetas
+
+Para identificar los tratamientos se elaboraron etiquetas en R con sus respectivas leyendas (lijado, bisturí y control), lo que facilitó un seguimiento organizado y preciso del comportamiento de cada grupo de semillas.
+
+```{r}
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
+#| fig-cap: "Imagen actualizada desde Google Drive"
+
+library(cowplot)
+
+ggdraw() +
+  draw_image(
+    "https://drive.google.com/uc?export=view&id=1XcY3_zyWIdNwj9N5uHZFit7gKhxSZcSE",
+    x = 0, y = 0, width = 1, height = 1.5
+  )
+
+```
+
+## Selección de semillas.
+
+Las semillas fueron seleccionadas cuidadosamente, asegurándose de que no presentaran defectos como daños por plagas o un tamaño excesivamente reducido. Posteriormente, se aplicaron dos métodos físicos de escarificación: a 100 semillas se les lijó la testa (abrasión mecánica) y a otras 100 se les realizó un corte en la testa utilizando un bisturí. Además, se seleccionaron cuatro repeticiones de 25 semillas cada una para el tratamiento control.
+
+```{r}
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
+#| fig-cap: "Imagen actualizada desde Google Drive"
+
+library(cowplot)
+
+ggdraw() +
+  draw_image(
+    "https://drive.google.com/uc?export=view&id=1bdEYecu1GXNNzC8-TwglUnQI80nrlYJl",
+    x = 0.2, y = 0.25, width = 0.55, height = 0.55
+  )
+
+```
+
+## Preparación de recipientes.
+
+El experimento se desarrolló haciendo uso de 12 recipientes de plástico, de tal  manera que estén divididos en tres tratamientos: 4 recipientes para el método físicos de escarificación por lijado, 4 recipientes para corte de la testa con bisturí y 4 recipientes como control. 
+En la base de los recipientes se colocó papel toalla y se humedeció con agua.Luego se procedió a lijar las semillas del tratamiento de escarificación con lija de la cual se tenía 4 repeticiones, De igual manera se procedió a cortar una parte de la semilla con el bisturí que correspondía al tratamiento con bisturí que también tenía 4 repeticiones.
+
+Y del tratamiento 3 que era el control solo se colocó en los taperes correspondientes sin ser sometidos a ningún método de escarificación.
+
+
+```{r}
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
+#| fig-cap: "Collage de 5 imágenes desde Google Drive"
+
+library(cowplot)
+
+urls <- c(
+  "https://drive.google.com/uc?export=view&id=1UVBiUGFj3zBGPq58ao_iDvsakCJTMK5c",
+  "https://drive.google.com/uc?export=view&id=1WvPIlSIL7wzNGs5kSny1VUVHPiCQMbFW",
+  "https://drive.google.com/uc?export=view&id=1dR4U2pqQVvMRqD8oxzDfgzON1-3aaTFi",
+  "https://drive.google.com/uc?export=view&id=1qaodYv35aYV4NLXM1DotxTkGHu80oig5"
+)
+
+ggdraw() +
+  draw_image(urls[1], x = 0.1, y = 0.6, width = 0.4, height = 0.3) +
+  draw_image(urls[2], x = 0.5,  y = 0.6, width = 0.3, height = 0.3) +
+  draw_image(urls[3], x = 0.1, y = 0.2, width = 0.4, height = 0.3) +
+  draw_image(urls[4], x = 0.5, y = 0.2,  width = 0.4, height = 0.3)
+
+```
+
+## Organización de semillas.
+
+Se colocaron 25 semillas por recipiente, distribuidas de forma ordenada para facilitar su observación y análisis.
+
+```{r}
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
+#| fig-cap: "Imagen actualizada desde Google Drive"
+
+library(cowplot)
+
+ggdraw() +
+  draw_image(
+    "https://drive.google.com/uc?export=view&id=1ULfKxy9nzzUdrzszrGkTlOwwQZ3ktKsE",
+    x = 0.2, y = 0.25, width = 0.55, height = 0.55
+  )
+
+```
+
+
 
 ```{r}
 source("https://inkaverse.com/setup.r")
