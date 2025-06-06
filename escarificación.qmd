@@ -161,29 +161,37 @@ ggdraw() +
 
 ```
 
-**Variables a evaluar.**
-	**Variable independiente: **
+**Variables a evaluar**
+
+**Variable independiente:**
 	
 Tipos  de escarificación (lijado de la testa y corte con bisturí)
 
-	**Variable dependiente: **
+**Variable dependiente: **
 	
 - Porcentaje de germinación de semillas
+
 - Índice de sincronización de la germinación de semillas.
+
 - Tiempo medio de germinación de semillas
 
-**Diseño del experimento.**
-	**Tratamientos**
-- T1: Escarificación por lijado o abrasión mecánica.
-- T2: Escarificación por corte de la testa con bisturí.
-- T3: Control
-	**Repeticiones**
-		
-		4 repeticiones por tratamiento.
+**Diseño del experimento**
 
-	**Número de semillas por repetición**
+**Tratamientos**
+	
+- T1: Escarificación por lijado o abrasión mecánica.
+
+- T2: Escarificación por corte de la testa con bisturí.
+
+- T3: Control
+
+**Repeticiones**
 		
-		25 semillas por repetición.
+	4 repeticiones por tratamiento.
+
+**Número de semillas por repetición**
+		
+	25 semillas por repetición.
 
 **Diseño estadístico**
 		
