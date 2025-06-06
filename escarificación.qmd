@@ -222,7 +222,7 @@ gsm <- ger_summary(SeedN = "seeds"
 
 ```
 
-## Tiempo medio de germinaión
+## Tiempo medio de germinación
 
 En la gráfica de barras en el eje Y etiquetado como mgt (tiempo medio de germinación) compara un compara un valor promedio para los tratamientos aplicados a semillas de Lupinus sp.
 En el grupo control pues como se ve no presenta ninguna barra visible, ello es porque el valor no se calculó.
