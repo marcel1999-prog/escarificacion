@@ -14,14 +14,14 @@ editor_options:
   chunk_output_type: console
 ---
 # INTRODUCCIÓN
-Las semillas de lupino (Lupinus sp.) presentan dormancia física que impide su germinación, debido a la dureza e impermeabilidad de la testa (Garduza et al., 2020). Para superar esta barrera, se aplican métodos de escarificación física como el lijado y el corte con bisturí, los cuales han demostrado mejorar significativamente la germinación y sincronización en especies como L. perennis y L. exaltatus (Steinmaus et al., 2000; Mackay et al., 1996). Estos tratamientos también se asocian con mayor actividad enzimática en etapas iniciales (Garduza et al., 2019).
- En un estudio sobre Lupinus bilineatus, la escarificación mecánica mediante lijado con papel de lija resultó en un 48.9 % de germinación, cifra significativamente superior al control sin tratamiento. Este tratamiento no sólo rompió la impermeabilidad de la testa, sino que, al exponer las capas internas del endospermo, facilitó la imbibición y permitió que las enzimas hidrolíticas actúen con mayor rapidez en los primeros días de germinación, mejorando la energía germinativa y la uniformidad en el desarrollo de la plántula (Pascual et al., 2020).
+Las semillas de lupino (*Lupinus mutabilis*) presentan dormancia física que impide su germinación, debido a la dureza e impermeabilidad de la testa (Garduza et al., 2020). Para superar esta barrera, se aplican métodos de escarificación física como el lijado y el corte con bisturí, los cuales han demostrado mejorar significativamente la germinación y sincronización en especies como L. perennis y L. exaltatus (Steinmaus et al., 2000; Mackay et al., 1996). Estos tratamientos también se asocian con mayor actividad enzimática en etapas iniciales (Garduza et al., 2019).
+ En un estudio sobre *Lupinus bilineatus*, la escarificación mecánica mediante lijado con papel de lija resultó en un 48.9 % de germinación, cifra significativamente superior al control sin tratamiento. Este tratamiento no sólo rompió la impermeabilidad de la testa, sino que, al exponer las capas internas del endospermo, facilitó la imbibición y permitió que las enzimas hidrolíticas actúen con mayor rapidez en los primeros días de germinación, mejorando la energía germinativa y la uniformidad en el desarrollo de la plántula (Pascual et al., 2020).
 
 # OBJETIVOS
 
 ## Objetivo general
 
-Determinar la germinación de Lupinus sp  mediante  dos técnicas de escarificación física.
+Determinar la germinación de *Lupinus mutabilis*  mediante  dos técnicas de escarificación física.
 
 ## Objetivos específicos
 
@@ -34,7 +34,7 @@ Determinar la germinación de Lupinus sp  mediante  dos técnicas de escarificac
 # MATERIALES Y MÉTODOS
 
 ## Materiales:
-- Semillas de chocho (Lupinus sp.)
+- Semillas de chocho (*Lupinus mutabilis*)
 - Lijas
 - Bisturíes
 - Papel toalla
@@ -48,67 +48,19 @@ Determinar la germinación de Lupinus sp  mediante  dos técnicas de escarificac
 
 **Obtención de semillas**
 
-Se obtuvo 1 kg de semillas de chocho (Lupinus sp) provenientes de la provincia  de Luya, distrito Lamud.
+Se obtuvo 1 kg de semillas de chocho (*Lupinus mutabilis*) provenientes de la provincia  de Luya, distrito Lamud.
 
-```{r}
-#| echo: false
-#| results: 'asis'
-#| message: false
-#| warning: false
-#| fig-cap: "Mi imagen desde Google Drive"
-
-library(cowplot)
-
-ggdraw() +
-  draw_image(
-    "https://drive.google.com/uc?export=view&id=1ku33IQeYFTJAcshubV2_BntZtO7E7_QY",
-    x = 0.2, y = 0.2, width = 0.5, height = 0.5
-  )
-
-```
 **Elaboración de las etiquetas**
 
 Para identificar los tratamientos se elaboraron etiquetas en R con sus respectivas leyendas (lijado, bisturí y control), lo que facilitó un seguimiento organizado y preciso del comportamiento de cada grupo de semillas.
 
-```{r}
-#| echo: false
-#| results: 'asis'
-#| message: false
-#| warning: false
-#| fig-cap: "Imagen actualizada desde Google Drive"
-
-library(cowplot)
-
-ggdraw() +
-  draw_image(
-    "https://drive.google.com/uc?export=view&id=1XcY3_zyWIdNwj9N5uHZFit7gKhxSZcSE",
-    x = 0, y = 0, width = 1, height = 1.5
-  )
-
-```
 
 **Selección de semillas.**
 
 Las semillas fueron seleccionadas cuidadosamente, asegurándose de que no presentaran defectos como daños por plagas o un tamaño excesivamente reducido. Posteriormente, se aplicaron dos métodos físicos de escarificación: a 100 semillas se les lijó la testa (abrasión mecánica) y a otras 100 se les realizó un corte en la testa utilizando un bisturí. Además, se seleccionaron cuatro repeticiones de 25 semillas cada una para el tratamiento control.
 
-```{r}
-#| echo: false
-#| results: 'asis'
-#| message: false
-#| warning: false
-#| fig-cap: "Imagen actualizada desde Google Drive"
 
-library(cowplot)
-
-ggdraw() +
-  draw_image(
-    "https://drive.google.com/uc?export=view&id=1bdEYecu1GXNNzC8-TwglUnQI80nrlYJl",
-    x = 0.2, y = 0.25, width = 0.55, height = 0.55
-  )
-
-```
-
-**Preparación de recipientes.**
+**Preparación de recipientes y semillas (aplicación de los métodos de escarificación)**
 
 El experimento se desarrolló haciendo uso de 12 recipientes de plástico, de tal  manera que estén divididos en tres tratamientos: 4 recipientes para el método físicos de escarificación por lijado, 4 recipientes para corte de la testa con bisturí y 4 recipientes como control. 
 En la base de los recipientes se colocó papel toalla y se humedeció con agua.Luego se procedió a lijar las semillas del tratamiento de escarificación con lija de la cual se tenía 4 repeticiones, De igual manera se procedió a cortar una parte de la semilla con el bisturí que correspondía al tratamiento con bisturí que también tenía 4 repeticiones.
@@ -123,43 +75,54 @@ Y del tratamiento 3 que era el control solo se colocó en los taperes correspond
 #| warning: false
 #| fig-cap: "Collage de 5 imágenes desde Google Drive"
 
+library(tidyverse)
+library(magick)
 library(cowplot)
+library(tiff)
+library(png)
+library(jpeg)
 
-urls <- c(
-  "https://drive.google.com/uc?export=view&id=1UVBiUGFj3zBGPq58ao_iDvsakCJTMK5c",
-  "https://drive.google.com/uc?export=view&id=1WvPIlSIL7wzNGs5kSny1VUVHPiCQMbFW",
-  "https://drive.google.com/uc?export=view&id=1dR4U2pqQVvMRqD8oxzDfgzON1-3aaTFi",
-  "https://drive.google.com/uc?export=view&id=1qaodYv35aYV4NLXM1DotxTkGHu80oig5"
-)
+plot01 <- readJPEG("primero.jpg") %>% grid::rasterGrob()
 
-ggdraw() +
-  draw_image(urls[1], x = 0.1, y = 0.6, width = 0.4, height = 0.3) +
-  draw_image(urls[2], x = 0.5,  y = 0.6, width = 0.3, height = 0.3) +
-  draw_image(urls[3], x = 0.1, y = 0.2, width = 0.4, height = 0.3) +
-  draw_image(urls[4], x = 0.5, y = 0.2,  width = 0.4, height = 0.3)
+plot <- list(plot01) %>% 
+  plot_grid(plotlist = .
+            , nrow = 1
+            )
+
+plot
 
 ```
-
-**Organización de semillas.**
-
-Se colocaron 25 semillas por recipiente, distribuidas de forma ordenada para facilitar su observación y análisis.
 
 ```{r}
 #| echo: false
 #| results: 'asis'
 #| message: false
 #| warning: false
-#| fig-cap: "Imagen actualizada desde Google Drive"
+#| fig-cap: "Collage de 5 imágenes desde Google Drive"
 
+library(tidyverse)
+library(magick)
 library(cowplot)
+library(tiff)
+library(png)
+library(jpeg)
 
-ggdraw() +
-  draw_image(
-    "https://drive.google.com/uc?export=view&id=1ULfKxy9nzzUdrzszrGkTlOwwQZ3ktKsE",
-    x = 0.2, y = 0.25, width = 0.55, height = 0.55
-  )
+plot01 <- readJPEG("segundo.jpg") %>% grid::rasterGrob()
+plot02 <- readJPEG("tercero.jpg") %>% grid::rasterGrob()
 
+plot <- list(plot01, plot02) %>% 
+  plot_grid(plotlist = .
+            , nrow = 1
+            , labels = "AUTO"
+            )
+
+plot
 ```
+
+
+**Organización de semillas.**
+
+Se colocaron 25 semillas por recipiente, distribuidas de forma ordenada para facilitar su observación y análisis.
 
 **Variables a evaluar**
 
@@ -186,17 +149,21 @@ Tipos  de escarificación (lijado de la testa y corte con bisturí)
 - T3: Control
 
 **Repeticiones**
-		
-	4 repeticiones por tratamiento.
+
+4 repeticiones por tratamiento.
 
 **Número de semillas por repetición**
-		
-	25 semillas por repetición.
+
+25 semillas por repetición.
 
 **Diseño estadístico**
-		
-		Diseño de Bloques Completos al Azar (DBCA).
-		
+
+Diseño de Bloques Completos al Azar (DBCA).
+
+**Etiquetado**
+
+Se pegaron las etiquetas en la tapa de los tapers según correspondía, para así evitar confusiones al momento de realizar la anotación de datos evaluados, es decir, para identificar los tratamientos.
+
 **Evaluación de las semillas germinadas **
 
 La evaluación fue diaria iniciando del día 0, hasta el día 5, registrando los datos de manera continua la aparición de signos de germinación y cualquier cambio relevante en su desarrollo. Durante este periodo, se controló cuidadosamente el nivel de humedad y se mantuvieron constantes las condiciones ambientales, para así evaluar con cuál de los métodos de escarificación las semillas logran germinar en menor tiempo.
@@ -381,8 +348,59 @@ plot <- git %>%
 plot
 ```
 
+## imágenes de resultados de germinación por tratamiento
+
+en la imagen A se puede observar lo que fue la germinacion de tratamiento de escarificación realizando corte con bisturí, imagen B lijado y C es el tratamiento control.
+
+```{r}
+#| echo: false
+#| results: 'asis'
+#| message: false
+#| warning: false
+#| fig-cap: "Collage de 5 imágenes desde Google Drive"
+
+library(tidyverse)
+library(magick)
+library(cowplot)
+library(tiff)
+library(png)
+library(jpeg)
+
+plot01 <- readJPEG("bisturí.jpg") %>% grid::rasterGrob()
+plot02 <- readJPEG("lijado.jpg") %>% grid::rasterGrob()
+plot03 <- readJPEG("control.jpg") %>% grid::rasterGrob()
+
+plot <- list(plot01, plot02, plot03) %>% 
+  plot_grid(plotlist = .
+            , nrow = 2
+            , labels = "AUTO"
+            )
+
+plot
+```
+
+
 # DISCUSIÓN
 
+Los resultados obtenidos en este estudio evidencian que los métodos de escarificación física, especialmente el lijado, mejoran la germinación de semillas de Lupinus mutabilis, tanto en porcentaje como en velocidad, en comparación con el grupo control. Estos hallazgos son consistentes con lo reportado por Garduza-Acosta et al. (2020), quienes observaron que la escarificación en especies del género Lupinus y Crotalaria mejora significativamente la germinación, debido a la ruptura de la dormancia física provocada por la impermeabilidad de la testa. La abrasión mecánica favorece la imbibición de agua y la activación de enzimas hidrolíticas responsables del metabolismo temprano de la semilla (Garduza-Acosta et al., 2019). En su estudio, los autores encontraron que tratamientos físicos como lijado y corte incrementaron la actividad enzimática durante la germinación, mejorando el vigor y uniformidad de las plántulas.
+
+El presente estudio también encontró que el tiempo medio de germinación (MGT) fue más corto en el tratamiento con lijado (2 a 4 días), en comparación con el bisturí (2 a 7 días). Este comportamiento sugiere que el lijado no solo favorece una mayor proporción de semillas germinadas, sino que también acelera el proceso, lo cual es deseable desde una perspectiva agronómica. Tal como señalan Steinmaus et al. (2000), la reducción del tiempo medio de germinación está asociada con una mayor eficiencia en la emergencia de plántulas, permitiendo una mejor competencia por recursos como luz, agua y nutrientes.
+
+Asimismo, en estudios previos con Lupinus bilineatus, Chavez et al. (2010) encontraron que la escarificación por lijado aumentó significativamente el porcentaje de germinación y la energía germinativa, demostrando que la abrasión mecánica de la testa facilita el paso de agua hacia el embrión y estimula la actividad fisiológica temprana.
+
+Por otro lado, Mackay et al. (1996) demostraron que la escarificación mejora la germinación de Lupinus perennis, especialmente en condiciones controladas. Aunque el corte con bisturí también rompe la testa, puede ser menos eficiente si no se realiza con precisión, lo que podría explicar los resultados ligeramente inferiores en el presente estudio. 
+
+Aunque el grupo control alcanzó un alto porcentaje de germinación (90 %), este inició más tardíamente y mostró menor uniformidad. Esto sugiere que una parte de las semillas puede superar naturalmente la dormancia, aunque con una mayor variabilidad en el tiempo de germinación. Este resultado resalta la importancia de aplicar métodos pregerminativos para asegurar una germinación más rápida y uniforme, especialmente en contextos de producción a escala.
+
+En conjunto, los datos respaldan que la escarificación por lijado es una alternativa eficaz, económica y sencilla para mejorar la germinación de Lupinus mutabilis, lo que puede tener un impacto directo en la producción de plántulas y la estandarización de cultivos de esta leguminosa andina de gran valor nutricional.
+
+# CONCLUSIONES
+
+Los resultados obtenidos permitieron comprobar que la escarificación física mejora la germinación de semillas de *Lupinus mutabilis*, aunque no se evidenciaron diferencias estadísticamente significativas entre tratamientos. El tratamiento con lijado presentó la mayor eficiencia germinativa, alcanzando un 92% de germinación y mostrando una emergencia más temprana, desde el primer día. Le siguieron el tratamiento control con 90% y el bisturí con 88%. A pesar de estas ligeras diferencias porcentuales, todos los tratamientos lograron porcentajes altos de germinación.
+
+En cuanto al tiempo medio de germinación (MGT), el lijado también mostró un comportamiento más favorable, con un valor ligeramente menor (2 a 4 días) respecto al bisturí (2 a 7 días), mientras que para el control no se calculó este valor. Esto indica que la escarificación por lijado no solo favorece una mayor proporción de semillas germinadas, sino que también acelera el proceso germinativo.
+
+Finalmente, el análisis gráfico sugiere que el tratamiento con lijado mejora la uniformidad y velocidad de germinación, lo que lo convierte en una técnica eficaz y práctica para romper la dormancia física en semillas de lupino sp. . No obstante, se recomienda continuar con evaluaciones en condiciones de campo para validar su efectividad en diferentes contextos agroecológicos.
 
 # REFERENCIAS BIBLIOGRÁFICAS
 
