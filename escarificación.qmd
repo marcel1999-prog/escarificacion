@@ -350,7 +350,7 @@ plot
 
 ## imágenes de resultados de germinación por tratamiento
 
-en la imagen A se puede observar lo que fue la germinacion de tratamiento de escarificación realizando corte con bisturí, imagen B lijado y C es el tratamiento control.
+En la imagen A se puede observar lo que fue la germinacion de tratamiento de escarificación realizando corte con bisturí, imagen B lijado y C es el tratamiento control.
 
 ```{r}
 #| echo: false
